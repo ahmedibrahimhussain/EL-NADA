@@ -7814,7 +7814,7 @@ a0x:function a0x(a){this.a=a},
 a0w:function a0w(a){this.a=a},
 E8:function E8(){},
 aTc(a,b,c,d,e,f,g){var s,r=null,q=A.b4(a,r,t.w).w,p=$.a_().gb0()
-q=q.a.a<800?A.atW(r,r,B.Hh,r,r,new A.arD(a),r,r,r):A.qw(A.b([new A.jy("\u0627\u062a\u0635\u0644 \u0628\u0646\u0627",new A.arE(c),r),new A.jy("\u0623\u0639\u0645\u0627\u0644\u0646\u0627 \u0627\u0644\u0642\u0627\u062f\u0645\u0629",new A.arF(g),r),new A.jy("\u0623\u0639\u0645\u0627\u0644\u0646\u0627",new A.arG(e),r),new A.jy("\u062e\u062f\u0645\u0627\u062a\u0646\u0627",new A.arH(f),r),new A.jy("\u0645\u0646 \u0646\u062d\u0646",new A.arI(b),r),new A.jy("\u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629",new A.arJ(d),r)],t.p),B.O,B.a1,B.N)
+q=q.a.a<450?A.atW(r,r,B.Hh,r,r,new A.arD(a),r,r,r):A.qw(A.b([new A.jy("\u0627\u062a\u0635\u0644 \u0628\u0646\u0627",new A.arE(c),r),new A.jy("\u0623\u0639\u0645\u0627\u0644\u0646\u0627 \u0627\u0644\u0642\u0627\u062f\u0645\u0629",new A.arF(g),r),new A.jy("\u0623\u0639\u0645\u0627\u0644\u0646\u0627",new A.arG(e),r),new A.jy("\u062e\u062f\u0645\u0627\u062a\u0646\u0627",new A.arH(f),r),new A.jy("\u0645\u0646 \u0646\u062d\u0646",new A.arI(b),r),new A.jy("\u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629",new A.arJ(d),r)],t.p),B.O,B.a1,B.N)
 s=16*$.a_().gbC()
 return A.axc(!1,B.dA,A.qw(A.b([q,new A.cE(new A.aM(s,0,s,0),A.auM("assets/images/light_logo.svg",60*$.a_().gb0()),r)],t.p),B.O,B.th,B.N),0,80*p)},
 arD:function arD(a){this.a=a},
