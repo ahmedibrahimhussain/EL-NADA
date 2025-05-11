@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/recourses/constants/constants.dart';
 import '../../../../core/recourses/styles_manger/styles_manager.dart';
 import '../../../../core/recourses/color_manager/color_manager.dart';
 import '../../../../core/widgets/animated_text.dart';
@@ -10,14 +11,17 @@ class ProjectsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(spacing: 30.h,
+    final screenWidth = MediaQuery.of(context).size.width;
+  final isMobile = screenWidth < Constants.mobileSize;
+    return Column(
       children: [
         CustomAnimatedText(
           text: "مشاريعنا المتميزة.",
-          style: getBoldStyle(fontSize: 30, color: ColorManager.amber),
+          style: getBoldStyle(fontSize: isMobile ? 45 : 30, color: ColorManager.amber),
         ),
-        ProjectsGridview(),
-        SizedBox(height: 30.h,),
+        SizedBox(height: 30.h),
+        const ProjectsGridview(),
+        SizedBox(height: 30.h),
       ],
     );
   }

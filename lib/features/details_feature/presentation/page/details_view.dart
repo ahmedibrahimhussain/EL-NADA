@@ -40,7 +40,7 @@ class DetailsView extends StatelessWidget {
                   title: project.name,
                   images: project.appImages,
                 ),
-                ContactUsView(),
+                const ContactUsView(),
               ],
             ),
           );

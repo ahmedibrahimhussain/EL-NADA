@@ -12,34 +12,45 @@ class ServicesCard extends StatelessWidget {
     required this.description,
     required this.imagePath,
   });
+
   final double? cardWidth;
   final String title;
   final String description;
   final String imagePath;
+
   @override
   Widget build(BuildContext context) {
+    final isMobile = MediaQuery.of(context).size.width < 600;
+
     return HoverEffectWrapper(
       effect: HoverEffectType.flood,
       child: Container(
         padding: EdgeInsets.all(20.sp),
         decoration: BoxDecoration(
           color: ColorManager.scaffoldBackGroundColor,
-          borderRadius: BorderRadius.circular(12.r),
+          borderRadius: BorderRadius.circular(30.r),
         ),
         width: cardWidth ?? 350.w,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Text(
               title,
               textDirection: TextDirection.rtl,
-              style: getBoldStyle(fontSize: 20, color: ColorManager.white),
+              style: getBoldStyle(
+                fontSize: isMobile ? 40 : 20,
+                color: ColorManager.white,
+              ),
             ),
-             SizedBox(height: 10.h),
+            SizedBox(height: 10.h),
             Text(
               description,
               textDirection: TextDirection.rtl,
-              style: getMediumStyle(fontSize: 14, color: ColorManager.grey),
+              style: getMediumStyle(
+                fontSize: isMobile ? 40 : 14,
+                color: ColorManager.grey,
+
+              ),
             ),
             SizedBox(height: 15.h),
             ClipRRect(
@@ -48,7 +59,7 @@ class ServicesCard extends StatelessWidget {
                 imagePath,
                 fit: BoxFit.fill,
                 height: 280.h,
-                width: 500.w,
+                width: double.infinity,
               ),
             ),
           ],

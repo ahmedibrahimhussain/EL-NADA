@@ -18,12 +18,14 @@ class CustomContactCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMobile = MediaQuery.of(context).size.width < 600;
+
     return HoverEffectWrapper(
       effect: HoverEffectType.float,
       hoverBorderColor: Colors.deepPurpleAccent,
       child: Container(
-        width: 300.w,
-        padding: EdgeInsets.all(10.sp),
+        width: isMobile ? 600.w : 300.w,
+        padding: EdgeInsets.all(10.r),
         decoration: BoxDecoration(
           color: ColorManager.scaffoldBackGroundColor,
           borderRadius: BorderRadius.circular(16.r),
@@ -36,19 +38,19 @@ class CustomContactCard extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: getBoldStyle(fontSize: 22, color: ColorManager.white),
+                  style: getBoldStyle(fontSize: isMobile ? 35 : 20, color: ColorManager.white),
                 ),
                 SizedBox(width: 10.w),
-                Icon(icon, size: 40.sp, color: ColorManager.white),
+                Icon(icon, size: 40, color: ColorManager.white),
               ],
             ),
             SizedBox(height: 10.h),
             ...contentLines.map(
-              (line) => Padding(
-                padding: EdgeInsets.symmetric(vertical: 10.h),
+                  (line) => Padding(
+                padding: EdgeInsets.symmetric(vertical: 5.h),
                 child: Text(
                   line,
-                  style: getMediumStyle(color: ColorManager.white),
+                  style: getMediumStyle(fontSize:isMobile ? 30 : 16, color: ColorManager.white),
                 ),
               ),
             ),

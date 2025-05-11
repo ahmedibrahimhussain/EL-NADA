@@ -2,9 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:el_nada/features/home_feature/presentation/widgets/projects_animation_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 
-import '../../../../core/routing/routes.dart';
+import '../../../../core/recourses/constants/constants.dart';
 
 class UpComingGridview extends StatelessWidget {
   const UpComingGridview({super.key});
@@ -23,30 +22,39 @@ class UpComingGridview extends StatelessWidget {
         }
 
         final docs = snapshot.data!.docs;
-        return SizedBox(
-          width: 1200.w,
-          child: GridView.builder(
-            physics: const NeverScrollableScrollPhysics(),
-            shrinkWrap: true,
-            itemCount: docs.length,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: 100.w,
-              mainAxisSpacing: 50.h,
-              childAspectRatio: 1.9,
-            ),
-            itemBuilder: (context, index) {
-              final data = docs[index].data() as Map<String, dynamic>;
+        final screenWidth = MediaQuery.of(context).size.width;
+        final isMobile = screenWidth <  Constants.mobileSize;
 
-              return ThreeDCard(
-                title: data['name'] ?? '',
-                subtitle: data['category'] ?? "تطبيق جوال ",
-                imagePath: data['coverImage'] ?? '', onTap: () {},
-              );
-            },
+        return Center(
+          child: Padding(
+            padding:  EdgeInsets.symmetric(horizontal: 80.w),
+            child: GridView.builder(
+              physics: const NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: docs.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: isMobile ? 1 : 2,
+                crossAxisSpacing: isMobile ? 20.w : 100.w,
+                mainAxisSpacing: 50.h,
+                childAspectRatio: 1.9,
+              ),
+              itemBuilder: (context, index) {
+                final data = docs[index].data() as Map<String, dynamic>;
+
+                return ThreeDCard(
+                  title: data['name'] ?? '',
+                  subtitle: data['category'] ?? 'تطبيق جوال',
+                  imagePath: data['coverImage'] ?? '',
+                  onTap: () {
+
+                  }, isMobile: isMobile,
+                );
+              },
+            ),
           ),
         );
       },
     );
   }
+
 }
