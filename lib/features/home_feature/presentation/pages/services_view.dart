@@ -10,45 +10,74 @@ import '../widgets/services_card.dart';
 
 class ServicesView extends StatelessWidget {
   const ServicesView({super.key});
+
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isMobile = screenWidth < Constants.mobileSize;
+
     return Column(
-      spacing: 50.h,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      spacing: 30.h,
       children: [
         CustomAnimatedText(
           text: "شركة برمجة تساعدك",
-          style: getBoldStyle(fontSize: 30, color: ColorManager.amber),
+          style: getBoldStyle(fontSize: isMobile ? 45 : 30, color: ColorManager.amber),
         ),
         SizedBox(
-          height: 150.h,
-          width: 600.w,
+          width:  800.w,
           child: Text(
             Constants.servicesViewDescription,
             textDirection: TextDirection.rtl,
             textAlign: TextAlign.center,
-            style: getBoldStyle(fontSize: 16, color: ColorManager.white),
+            style: getBoldStyle(fontSize: isMobile ? 30 : 16, color: ColorManager.white),
           ),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            ServicesCard(
-              title: Constants.servicesViewPhoneTitle,
-              description: Constants.servicesViewPhoneDescription,
-              imagePath: ImagesManger.servicesViewPhone,
+        isMobile
+            ? Column(
+              children: [
+                ServicesCard(
+                  title: Constants.servicesViewPhoneTitle,
+                  description: Constants.servicesViewPhoneDescription,
+                  imagePath: ImagesManger.servicesViewPhone,
+                  cardWidth: screenWidth * 0.85,
+                ),
+                SizedBox(height: 20.h),
+                ServicesCard(
+                  title: Constants.servicesViewWebTitle,
+                  description: Constants.servicesViewWebDescription,
+                  imagePath: ImagesManger.codeBackground,
+                  cardWidth: screenWidth * 0.85,
+                ),
+                SizedBox(height: 20.h),
+                ServicesCard(
+                  title: Constants.servicesViewLogoTitle,
+                  description: Constants.servicesViewLogoDescription,
+                  imagePath: ImagesManger.servicesViewLogo,
+                  cardWidth: screenWidth * 0.85,
+                ),
+              ],
+            )
+            : Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                ServicesCard(
+                  title: Constants.servicesViewPhoneTitle,
+                  description: Constants.servicesViewPhoneDescription,
+                  imagePath: ImagesManger.servicesViewPhone,
+                ),
+                ServicesCard(
+                  title: Constants.servicesViewWebTitle,
+                  description: Constants.servicesViewWebDescription,
+                  imagePath: ImagesManger.codeBackground,
+                ),
+                ServicesCard(
+                  title: Constants.servicesViewLogoTitle,
+                  description: Constants.servicesViewLogoDescription,
+                  imagePath: ImagesManger.servicesViewLogo,
+                ),
+              ],
             ),
-            ServicesCard(
-              title: Constants.servicesViewWebTitle,
-              description: Constants.servicesViewWebDescription,
-              imagePath: ImagesManger.codeBackground,
-            ),
-            ServicesCard(
-              title: Constants.servicesViewLogoTitle,
-              description: Constants.servicesViewLogoDescription,
-              imagePath: ImagesManger.servicesViewLogo,
-            ),
-          ],
-        ),
         SizedBox(height: 50.h),
       ],
     );

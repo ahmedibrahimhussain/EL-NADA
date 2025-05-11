@@ -49,9 +49,9 @@ dependencies:
   cloud_firestore:
   flutter_svg:
   animated_text_kit:
-  font_awesome_flutter: ^10.8.0
+  font_awesome_flutter:
   url_launcher:
-
+  responsive_framework: ^0.2.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

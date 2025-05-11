@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
-
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FloatingImage extends StatefulWidget {
   final String imagePath;
   const FloatingImage({super.key, required this.imagePath});
+
   @override
   FloatingImageState createState() => FloatingImageState();
 }
@@ -53,13 +53,14 @@ class FloatingImageState extends State<FloatingImage>
                     color: Colors.purple.withOpacity(0.3),
                     blurRadius: 80.r,
                     spreadRadius: 2,
-                    offset: const Offset(1, .1),
+                    offset: const Offset(1, 0.1),
                   ),
                 ],
               ),
               child: Image.asset(
                 widget.imagePath,
-                width: 500.w,height: 500.h,fit: BoxFit.fill,
+                height: MediaQuery.of(context).size.height * .4,
+                fit: BoxFit.fill,
               ),
             ),
           ),
