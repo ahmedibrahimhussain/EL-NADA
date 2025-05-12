@@ -42004,7 +42004,7 @@ r=s.a
 return A.aAV(A.dT(A.b([A.bv(q,80*$.a1().gb3(),q),new A.JF(s.c,r,s.b,q),B.Qz,new A.JE(r,s.d,q),B.Fp],t.p),B.cc,B.a7,B.O,0),q)},
 $S:329}
 A.my.prototype={
-O(a){var s,r,q,p=null,o=A.b4(a,p,t.w).w.a.a<600,n=o?750*$.a1().gbC():220*$.a1().gbC(),m=o?250*$.a1().gb3():160*$.a1().gb3(),l=o?$.a1().cr(6):$.a1().cr(12),k=$.a1(),j=10*Math.min(k.gbC(),k.gb3())
+O(a){var s,r,q,p=null,o=A.b4(a,p,t.w).w.a.a<600,n=o?650*$.a1().gbC():220*$.a1().gbC(),m=o?250*$.a1().gb3():400*$.a1().gb3(),l=o?$.a1().cr(6):$.a1().cr(12),k=$.a1(),j=10*Math.min(k.gbC(),k.gb3())
 k=$.a1()
 k=Math.min(k.gbC(),k.gb3())
 s=this.d
@@ -42033,17 +42033,17 @@ A.a10.prototype={
 $2(a,b){return new A.my(this.a.d[b],null,null,null)},
 $S:347}
 A.JF.prototype={
-O(a){var s,r,q,p,o,n=this,m=null,l="IBMPlexSansArabic",k=A.b4(a,m,t.w).w.a.a<600,j=k?20*$.a1().gbC():80*$.a1().gbC(),i=n.d
+O(a){var s,r,q,p,o,n=this,m=null,l="IBMPlexSansArabic",k=A.b4(a,m,t.w).w.a.a<600,j=k?20*$.a1().gbC():80*$.a1().gbC()
 if(k){s=$.a1().gbC()
 r=$.a1().gb3()
 q=A.bv(m,30*$.a1().gb3(),m)
 p=A.co(m,m,B.k,m,m,m,m,m,l,m,m,$.a1().cr(60),m,m,B.X,m,m,!0,m,m,m,m,m,m,m,m)
 o=A.bv(m,20*$.a1().gb3(),m)
-i=A.dT(A.b([new A.my(n.c,1000*s,250*r,m),q,new A.ex(i,p,m),o,A.eZ(n.e,m,m,A.co(m,m,B.k,m,m,m,m,m,l,m,m,$.a1().cr(55),m,m,B.X,m,m,!0,m,m,m,m,m,m,m,m),B.cz,m)],t.p),B.N,B.a7,B.O,0)}else{s=A.co(m,m,B.k,m,m,m,m,m,l,m,m,$.a1().cr(40),m,m,B.X,m,m,!0,m,m,m,m,m,m,m,m)
+s=A.dT(A.b([new A.my(n.c,1000*s,250*r,m),q,new A.ex(n.d,p,m),o,A.eZ(n.e,m,m,A.co(m,m,B.k,m,m,m,m,m,l,m,m,$.a1().cr(55),m,m,B.X,m,m,!0,m,m,m,m,m,m,m,m),B.cz,m)],t.p),B.N,B.a7,B.O,0)}else{s=A.co(m,m,B.k,m,m,m,m,m,l,m,m,$.a1().cr(40),m,m,B.X,m,m,!0,m,m,m,m,m,m,m,m)
 r=A.bv(m,30*$.a1().gb3(),m)
 q=t.p
-q=A.qw(A.b([A.atz(A.dT(A.b([new A.ex(i,s,m),r,A.eZ(n.e,m,m,A.co(m,m,B.k,m,m,m,m,m,l,m,m,$.a1().cr(20),m,m,B.X,m,m,!0,m,m,m,m,m,m,m,m),B.cz,m)],q),B.N,B.a7,B.O,0),1),A.bv(m,m,60*$.a1().gbC()),new A.my(n.c,600*$.a1().gbC(),m,m)],q),B.N,B.bW,B.O)
-i=q}return new A.cE(new A.aM(j,0,j,0),i,m)}}
+q=A.qw(A.b([A.atz(A.dT(A.b([new A.ex(n.d,s,m),r,A.eZ(n.e,m,m,A.co(m,m,B.k,m,m,m,m,m,l,m,m,$.a1().cr(20),m,m,B.X,m,m,!0,m,m,m,m,m,m,m,m),B.cz,m)],q),B.N,B.a7,B.O,0),1),A.bv(m,m,60*$.a1().gbC()),new A.my(n.c,600*$.a1().gbC(),m,m)],q),B.N,B.bW,B.O)
+s=q}return new A.cE(new A.aM(j,0,j,0),s,m)}}
 A.I_.prototype={
 O(a){var s=100*$.a1().gb3(),r=40*$.a1().gbC()
 return new A.cE(new A.aM(r,s,r,s),new A.uc(new A.Zu(),null),null)}}
